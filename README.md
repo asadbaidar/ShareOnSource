@@ -9,5 +9,5 @@ Body - filed with url, title and clipboard copied text in a format like given be
 https://www.google.com
 
 From [Google Inc.](https://www.google.com):
-> here cipboard data
+> here clipboard data
 -------------------
