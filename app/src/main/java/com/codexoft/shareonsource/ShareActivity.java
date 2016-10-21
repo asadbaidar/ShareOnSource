@@ -27,6 +27,10 @@ import android.widget.Toast;
 
 public class ShareActivity extends Activity {
 
+    public static final String SOURCE_SCHEME = "http";
+    public static final String SOURCE_AUTHORITY = "community.source.institute";
+    public static final String SOURCE_CATEGORY = "Community";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,13 +55,13 @@ public class ShareActivity extends Activity {
         String clipboardData = Utils.fetchClipboardData(this);
 
         return new Uri.Builder()
-                .scheme("http")
-                .authority("community.source.institute")
+                .scheme(SOURCE_SCHEME)
+                .authority(SOURCE_AUTHORITY)
                 .appendPath("new-topic")
                 .appendQueryParameter("title", title)
                 .appendQueryParameter("body",
                         String.format("%s\n\nFrom [%s](%s):\n> %s", url, title, url, clipboardData))
-                .appendQueryParameter("category", "Community")
+                .appendQueryParameter("category", SOURCE_CATEGORY)
                 .build();
     }
 
